@@ -25,63 +25,63 @@
             <div class="services">
             	<div class="hotWat">
             		<h3 id="hotWater">Горячая вода</h3>
-	                <label>Введите показания счетчика
+	                <label>Показания счетчика, куб. м.
 	                	<input type="text" name="hotWaterData">	
 	                </label>
-	                <div></div>
+	                <div class="answer"></div>
             	</div>
                 
                 <div class="coldWat">
                     <h3 id="coldWater">Холодная вода</h3>
-                    <label>Введите показания счетчика
+                    <label>Показания счетчика, куб. м.
                         <input type="text" name="coldWaterData">
                     </label>
-                    <div></div>
+                    <div class="answer"></div>
                 </div>
 
                 <div  class="elect">
                     <h3 id="electricity">Эл. энергия</h3>
-                    <label>Введите показания счетчика
+                    <label>Показания счетчика, киловатт-час
                         <input type="text" name="electricityData">    
                     </label>
-                    <div></div>    
+                    <div class="answer"></div>    
                 </div>    
                 
                 <div class="gas">
                     <h3 id="natureGas">Газ</h3>
-                    <label>Введите показания счетчика
+                    <label>Показания счетчика, куб. м.
                         <input type="text" name="natureGasData">    
                     </label>
-                    <div></div>
+                    <div class="answer"></div>
                 </div>
                 
 	        </div>
-	        <h6>Ссылка на сайт управляющей компании или сайта содержащего тарифы.</h6>
+	        <p><a href="http://www.admomsk.ru/web/guest/progress/rates/people/info-2016">Тарифы 2016 Омск</a></p>
 
 	        <script type="text/javascript">
 	        	
                 var CalculateHotW = function () {            
                     var valueEl = document.querySelector(".hotWat input").value;
 	        	    var result = document.querySelector(".hotWat div");
-	        	    result.innerHTML = valueEl*2;
+	        	    result.innerHTML = valueEl*(14.63 + 181.6) + " руб.";
 	        	};
                 
                 var CalculateColdW = function () {            
                     var valueEl = document.querySelector(".coldWat input").value;
                     var result = document.querySelector(".coldWat div");
-                    result.innerHTML = valueEl*2;
+                    result.innerHTML = valueEl*14.63 + " руб.";
                 };
 
                 var CalculateE = function () {            
                     var valueEl = document.querySelector(".elect input").value;
                     var result = document.querySelector(".elect div");
-                    result.innerHTML = valueEl*2;
+                    result.innerHTML = valueEl*3.56 + " руб.";
                 };
 
                 var CalculateGas = function () {            
                     var valueEl = document.querySelector(".gas input").value;
                     var result = document.querySelector(".gas div");
-                    result.innerHTML = valueEl*2;
+                    result.innerHTML = valueEl*7.43 + " руб.";
                 };
 
                 window.setInterval(CalculateHotW, 100);
