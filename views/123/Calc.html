@@ -27,35 +27,73 @@
             		<h3 id="hotWater">Горячая вода</h3>
 	                <label>Введите показания счетчика
 	                	<input type="text" name="hotWaterData">	
-	                
 	                </label>
 	                <div></div>
             	</div>
                 
+                <div class="coldWat">
+                    <h3 id="coldWater">Холодная вода</h3>
+                    <label>Введите показания счетчика
+                        <input type="text" name="coldWaterData">
+                    </label>
+                    <div></div>
+                </div>
 
-                <h3 id="coldWater">Холодная вода</h3>
-                <p>Введите показания счетчика</p>
-                <input type="text" name="coldWaterData">
-
-                <h3 id="electricity">Эл. энергия</h3>
-                <p>Введите показания счетчика</p>
-                <input type="text" name="electricityData">
-
-                <h3 id="natureGas">Газ</h3>
-                <p>Введите показания счетчика</p>
-                <input type="text" name="natureGasData">
+                <div  class="elect">
+                    <h3 id="electricity">Эл. энергия</h3>
+                    <label>Введите показания счетчика
+                        <input type="text" name="electricityData">    
+                    </label>
+                    <div></div>    
+                </div>    
+                
+                <div class="gas">
+                    <h3 id="natureGas">Газ</h3>
+                    <label>Введите показания счетчика
+                        <input type="text" name="natureGasData">    
+                    </label>
+                    <div></div>
+                </div>
+                
 	        </div>
 	        <h6>Ссылка на сайт управляющей компании или сайта содержащего тарифы.</h6>
 
 	        <script type="text/javascript">
 	        	
-                var Calculate = function () {            
+                var CalculateHotW = function () {            
                     var valueEl = document.querySelector(".hotWat input").value;
 	        	    var result = document.querySelector(".hotWat div");
 	        	    result.innerHTML = valueEl*2;
 	        	};
                 
-                window.setInterval(Calculate, 100);
+                var CalculateColdW = function () {            
+                    var valueEl = document.querySelector(".coldWat input").value;
+                    var result = document.querySelector(".coldWat div");
+                    result.innerHTML = valueEl*2;
+                };
+
+                var CalculateE = function () {            
+                    var valueEl = document.querySelector(".elect input").value;
+                    var result = document.querySelector(".elect div");
+                    result.innerHTML = valueEl*2;
+                };
+
+                var CalculateGas = function () {            
+                    var valueEl = document.querySelector(".gas input").value;
+                    var result = document.querySelector(".gas div");
+                    result.innerHTML = valueEl*2;
+                };
+
+                window.setInterval(CalculateHotW, 100);
+                window.clearInterval();
+
+                window.setInterval(CalculateColdW, 100);
+                window.clearInterval();
+
+                window.setInterval(CalculateE, 100);
+                window.clearInterval();
+
+                window.setInterval(CalculateGas, 100);
                 window.clearInterval();
 
 	        </script>
