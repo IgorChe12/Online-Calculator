@@ -60,40 +60,24 @@
 
 	        <script type="text/javascript">
 	        	
-                var CalculateHotW = function () {            
-                    var valueEl = document.querySelector(".hotWat input").value;
-	        	    var result = document.querySelector(".hotWat div");
-	        	    result.innerHTML = valueEl*(14.63 + 181.6) + " руб.";
+                var Calculate = function (param1, param2, coef) {            
+                    var valueEl = document.querySelector(param1).value;
+	        	    var result = document.querySelector(param2);
+	        	    result.innerHTML = valueEl*coef + " руб.";
 	        	};
                 
-                var CalculateColdW = function () {            
-                    var valueEl = document.querySelector(".coldWat input").value;
-                    var result = document.querySelector(".coldWat div");
-                    result.innerHTML = valueEl*14.63 + " руб.";
-                };
+                
 
-                var CalculateE = function () {            
-                    var valueEl = document.querySelector(".elect input").value;
-                    var result = document.querySelector(".elect div");
-                    result.innerHTML = valueEl*3.56 + " руб.";
-                };
-
-                var CalculateGas = function () {            
-                    var valueEl = document.querySelector(".gas input").value;
-                    var result = document.querySelector(".gas div");
-                    result.innerHTML = valueEl*7.43 + " руб.";
-                };
-
-                window.setInterval(CalculateHotW, 100);
+                window.setInterval(Calculate(".hotWat input", ".hotWat div", 88), 100);
                 window.clearInterval();
 
-                window.setInterval(CalculateColdW, 100);
+                window.setInterval(Calculate(".coldWat input", ".coldWat div", 79), 100);
                 window.clearInterval();
 
-                window.setInterval(CalculateE, 100);
+                window.setInterval(Calculate(".elect input", ".elect div", 17), 100);
                 window.clearInterval();
 
-                window.setInterval(CalculateGas, 100);
+                window.setInterval(Calculate(".gas input", ".gas div", 8), 100);
                 window.clearInterval();
 
 	        </script>
