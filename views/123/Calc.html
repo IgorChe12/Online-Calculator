@@ -14,22 +14,22 @@
         <div class="allStuff">
             <h1>Калькулятор стоимости услуг ЖКХ</h1>
             <div class="navBar">
-            	<h5>Навигация</h5>
-            	<ul>
-            		<li><a href="#hotWater">Гор.вода</a></li>
-            		<li><a href="#coldWater">Хол.вода</a></li>
-            		<li><a href="#electricity">Эл.энергия</a></li>
-            		<li><a href="#natureGas">Газ</a></li>
-            	</ul>
+                <h5>Навигация</h5>
+                <ul>
+                    <li><a href="#hotWater">Гор.вода</a></li>
+                    <li><a href="#coldWater">Хол.вода</a></li>
+                   <li><a href="#electricity">Эл.энергия</a></li>
+                    <li><a href="#natureGas">Газ</a></li>
+                </ul>
             </div>
             <div class="services">
-            	<div class="hotWat">
-            		<h3 id="hotWater">Горячая вода</h3>
-	                <label>Показания счетчика, куб. м.
-	                	<input type="text" name="hotWaterData">	
-	                </label>
-	                <div class="answer"></div>
-            	</div>
+                <div class="hotWat">
+                    <h3 id="hotWater">Горячая вода</h3>
+                    <label>Показания счетчика, куб. м.
+                        <input type="text" name="hotWaterData">
+                    </label>
+                    <div class="answer"></div>
+                </div>
                 
                 <div class="coldWat">
                     <h3 id="coldWater">Холодная вода</h3>
@@ -42,29 +42,31 @@
                 <div  class="elect">
                     <h3 id="electricity">Эл. энергия</h3>
                     <label>Показания счетчика, киловатт-час
-                        <input type="text" name="electricityData">    
-                    </label>
-                    <div class="answer"></div>    
-                </div>    
-                
-                <div class="gas">
-                    <h3 id="natureGas">Газ</h3>
-                    <label>Показания счетчика, куб. м.
-                        <input type="text" name="natureGasData">    
+                        <input type="text" name="electricityData">
                     </label>
                     <div class="answer"></div>
                 </div>
                 
-	        </div>
-	        <p><a href="http://www.admomsk.ru/web/guest/progress/rates/people/info-2016">Тарифы 2016 Омск</a></p>
+                <div class="gas">
+                    <h3 id="natureGas">Газ</h3>
+                    <label>Показания счетчика, куб. м.
+                        <input type="text" name="natureGasData">
+                    </label>
+                    <div class="answer"></div>
+                </div>
+                
+            </div>
+            <p><a href="http://www.admomsk.ru/web/guest/progress/rates/people/info-2016">Тарифы 2016 Омск</a></p>
 
-	        <script type="text/javascript">
-	        	
-                var Calculate = function (param1, param2, coef) {            
-                    var valueEl = document.querySelector(param1).value;
-	        	    var result = document.querySelector(param2);
-	        	    result.innerHTML = valueEl*coef + " руб.";
-	        	};
+            <script type="text/javascript">
+
+                var Calculate = function (param1, param2, coef) {
+                    return function () {
+                        var valueEl = document.querySelector(param1).value;
+                        var result = document.querySelector(param2);
+                        result.innerHTML = valueEl*coef + " руб.";
+                    }
+                };
                 
                 
 
@@ -80,9 +82,9 @@
                 window.setInterval(Calculate(".gas input", ".gas div", 8), 100);
                 window.clearInterval();
 
-	        </script>
+            </script>
 
-	    </div>
+        </div>
         
         
     </body> 
