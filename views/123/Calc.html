@@ -68,19 +68,17 @@
                     }
                 };
                 
-                
+                var hotWatIn = document.querySelector(".hotWat input");
+                hotWatIn.addEventListener("input", Calculate(".hotWat input", ".hotWat div", 88));
 
-                window.setInterval(Calculate(".hotWat input", ".hotWat div", 88), 100);
-                window.clearInterval();
+                var coldWatIn = document.querySelector(".coldWat input");
+                coldWatIn.addEventListener("input", Calculate(".coldWat input", ".coldWat div", 90));
 
-                window.setInterval(Calculate(".coldWat input", ".coldWat div", 79), 100);
-                window.clearInterval();
+                var electIn = document.querySelector(".elect input");
+                electIn.addEventListener("input", Calculate(".elect input", ".elect div", 100));
 
-                window.setInterval(Calculate(".elect input", ".elect div", 17), 100);
-                window.clearInterval();
-
-                window.setInterval(Calculate(".gas input", ".gas div", 8), 100);
-                window.clearInterval();
+                var gasIn = document.querySelector(".gas input");
+                gasIn.addEventListener("input", Calculate(".gas input", ".gas div", 95));
 
             </script>
 
