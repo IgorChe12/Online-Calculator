@@ -60,7 +60,7 @@
 
             <script type="text/javascript">
 
-                var Calculate = function (param1, param2, coef) {
+                var calculate = function (param1, param2, coef) {
                     return function () {
                         var valueEl = document.querySelector(param1).value;
                         var result = document.querySelector(param2);
@@ -69,16 +69,16 @@
                 };
                 
                 var hotWatIn = document.querySelector(".hotWat input");
-                hotWatIn.addEventListener("input", Calculate(".hotWat input", ".hotWat div", 88));
+                hotWatIn.addEventListener("input", calculate(".hotWat input", ".hotWat div", 88));
 
                 var coldWatIn = document.querySelector(".coldWat input");
-                coldWatIn.addEventListener("input", Calculate(".coldWat input", ".coldWat div", 90));
+                coldWatIn.addEventListener("input", calculate(".coldWat input", ".coldWat div", 90));
 
                 var electIn = document.querySelector(".elect input");
-                electIn.addEventListener("input", Calculate(".elect input", ".elect div", 100));
+                electIn.addEventListener("input", calculate(".elect input", ".elect div", 100));
 
                 var gasIn = document.querySelector(".gas input");
-                gasIn.addEventListener("input", Calculate(".gas input", ".gas div", 95));
+                gasIn.addEventListener("input", calculate(".gas input", ".gas div", 95));
 
             </script>
 
